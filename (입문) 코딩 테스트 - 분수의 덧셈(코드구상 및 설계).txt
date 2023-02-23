@@ -1,0 +1,77 @@
+a분의b
+6 / 5
+c분의d
+4 / 3
+
+a*c / b*c
+6*4   5*4
+24분의20
+
+c*a / d*a
+4*6   3*6
+24분의18
+
+(b*c)+(d*a) = 38
+20+18 = 38
+
+24분의38
+
+2로 나눠지면 (나누기2) if문 + FOr문
+3으로 나줘지면 (나누기3) if문 + FOR문
+
+
+유클리드 호제법!
+
+분모와 분자를 대상으로 유클리드 호제법
+1. 분모, 분자를 대상으로 유클리드 호제법을 통해 최대공약수를 구한다.
+2. 분모, 분자를 최대공약수로 나눈다.
+3. 분모, 분자를 최대공약수로 나누면 두 수는 서로소가 되기 때문에 기약분수가 된다.
+
+
+a/b의 나머지 r
+b/r의 나머지 r1
+b/r1의 나머지 rn
+.... b와 rn의 나머지
+
+
+
+---------------------------------------------
+class Solution {
+    public static int[] solution(int numer1, int denom1, int numer2, int denom2) {
+        int[] answer= new int[2];
+        int denom_multiply;
+        int numer_multiply;
+        if(0 < numer1 && 0 < denom1 && 0 < numer2 && 0 < denom2 && 1000 > numer1 && 1000 > denom1 && 1000 > numer2 && 1000 > denom2){
+            denom_multiply = denom1 * denom2;
+            numer_multiply = (numer1 * denom2) + (numer2 * denom1);
+            int N = Math_min(denom_multiply, numer_multiply);
+            denom_multiply = denom_multiply / N;
+            numer_multiply = numer_multiply / N;
+            answer[0] = numer_multiply;
+            answer[1] = denom_multiply;    
+        }
+        return answer;
+    }
+        
+    static int Math_min(int denom_multiply, int numer_multiply){
+        int r;
+        if(denom_multiply > numer_multiply ){
+            r = denom_multiply%numer_multiply;
+            if(r == 0 ){
+                return numer_multiply;
+            }
+            else{
+                return Math_min(numer_multiply,r);
+            }
+        }
+        else{
+            r = numer_multiply%denom_multiply;
+            if(r == 0 ){
+                return denom_multiply;
+            }
+            else{
+                return Math_min(denom_multiply,r);
+            }
+        }
+    } 
+}

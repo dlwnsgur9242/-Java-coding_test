@@ -1,0 +1,13 @@
+import java.util.Arrays;
+//Arrays.sort() 배열 정렬을 하기 위해서 선언.
+class Solution {
+    public int solution(int[] array) {
+        int answter=0;
+        int length = array.length;
+        int n=0;
+        int s=0;
+        Arrays.sort(array);
+        s = length/2; 
+        return array[s];   
+    }
+}

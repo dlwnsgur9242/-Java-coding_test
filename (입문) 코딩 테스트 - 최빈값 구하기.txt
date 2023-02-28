@@ -1,0 +1,26 @@
+// 최빈값 알고리즘(Mode Algorithm)
+// 주어진 데이터에서 가장 많이 나온(중복된) 값
+import java.util.HashMap;
+import java.util.Map;
+class Solution { 
+    public int solution(int[] array) {
+		Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+        int maxCount = 0;
+        int answer = -1;
+
+        for (int num : array) {
+            int c = count.getOrDefault(num, 0) + 1;
+            count.put(num, c);
+
+            if (c > maxCount) {
+                maxCount = c;
+                answer = num;
+            } else if (c == maxCount) {
+                // 최빈값이 중복되는 경우
+                answer = -1;
+            }
+        }
+
+        return answer;
+    }
+}

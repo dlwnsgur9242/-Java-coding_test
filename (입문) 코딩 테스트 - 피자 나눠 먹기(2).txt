@@ -1,0 +1,37 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0; //피자 판수
+        int x=6;        //피자 조각 수  
+            //유클리드 호제법 최대 공약수
+        if(1<=n && 100>=n){
+            int UCH_sum = UCH(x, n);
+            answer=(x*n)/UCH_sum;//유클리드 호제법 최소 공배수
+            answer=answer/x; // 최소 피자 판수!!
+        }
+        
+        return answer;
+        
+    }
+    static int UCH(int x, int n){
+        int r;
+        if(x>n){
+            r=x%n;
+            if(r==0){
+                return n;
+            }
+            else{
+                return UCH(n,r);
+            }
+        }
+        else{
+            r=n%x;
+            if(r==0){
+                return x;
+            }
+            else{
+                return UCH(x,r);
+            }
+        }
+    }
+    
+}

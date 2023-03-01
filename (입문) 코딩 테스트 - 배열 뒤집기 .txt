@@ -1,0 +1,16 @@
+class Solution {
+    public int[] solution(int[] num_list) {
+        int leng = num_list.length;
+        int[] answer = new int[leng];
+        int i = 0;
+        int j = leng-1;
+        
+        for(i=0;i<leng;i++){   
+            answer[j]=num_list[i];
+            //j=j-1;
+            j-=1;
+ 
+        }
+        return answer;
+    }
+}

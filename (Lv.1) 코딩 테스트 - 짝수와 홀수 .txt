@@ -1,0 +1,17 @@
+class Solution {
+    public String solution(int num) {
+        String answer_1 = "Even";
+        String answer_2 = "Odd";
+        String erorr = "ERORR";
+        if(num%2==0 || num==0){
+            return answer_1;
+        }
+        else if(num%2!=0 && 0<num){//음수가 홀수로 되지 않게 하기위해서 0<num 조건 추가
+            return answer_2;
+        }
+        else{ //음수나 계산 오류일 경우
+                return erorr;
+        }
+        
+    }
+}

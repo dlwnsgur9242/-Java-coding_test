@@ -1,0 +1,20 @@
+class Solution {
+    public int[] solution(long n) {
+        int[] answer = {};
+        long hol = n;
+        int i = 0;
+        while(hol>0){
+            hol/=10;
+            i++;
+        }
+        answer = new int[i];
+        
+        int j = 0;
+        while(n>0){
+            answer[j] =(int)(n%10);
+            n/=10;
+            j++;
+        }
+        return answer; 
+    }
+}

@@ -1,0 +1,23 @@
+class Solution {
+    boolean solution(String s) {
+        boolean answer=false ;
+        char target_A = 'y';
+        char target_B = 'p';
+        int count_A = 0;
+        int count_B = 0;
+        s=s.toLowerCase(); //.toUpperCase()는 소문자를 대문자로!   .toLowerCase()는 대문자를 소문자로!   바꿔줍니다.
+        for(int i=0; i<s.length();i++){
+            if(s.charAt(i) == target_A) {
+                count_A++;
+            }else if(s.charAt(i) == target_B) {
+                count_B++;
+            }
+        }
+        if (count_A == count_B) {
+            answer = true;
+        }else{
+            return answer;
+        }
+        return answer;
+    }
+}

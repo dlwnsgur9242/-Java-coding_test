@@ -1,0 +1,14 @@
+class Solution {
+  public long solution(long n) {
+      if (Math.pow((int)Math.sqrt(n), 2) == n) {
+            return (long) Math.pow(Math.sqrt(n) + 1, 2);
+        }
+        return -1;
+  }
+}
+
+//거듭 제곱 구하기 Math.pow()
+//Math.pow() 메소드는 입력값과 출력값은 모두 double형이며 Math.pow(대상숫자,지수)를 넣어주면 됩니다.
+
+//제곱근(루트) 구하기 Math.sqrt()
+//Math.sqrt() 메소드는 입력값과 출력값은 모두 double형이며 Math.sqrt(대상숫자)를 넣어주면 됩니다.

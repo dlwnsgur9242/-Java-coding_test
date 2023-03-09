@@ -1,0 +1,22 @@
+import java.util.Arrays;
+class Solution {
+    public int[] solution(int[] arr) {
+        // arr 배열에서 가장 작은 값을 찾아 min 변수에 저장
+        int min = arr[0];
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        // arr 배열에서 가장 작은 값(min)을 제외한 나머지 값을 answer 배열에 저장
+        int[] answer = new int[arr.length-1];
+        int index = 0;  // answer 배열에 값을 저장하기 위한 인덱스 변수
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] != min){
+                answer[index++] = arr[i];
+            }
+        }
+        // answer 배열 반환
+        return answer;
+    }
+}

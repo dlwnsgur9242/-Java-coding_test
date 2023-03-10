@@ -1,0 +1,16 @@
+class Solution {
+    public int solution(int left, int right) {
+        int answer=0;
+        //left~right까지의 수를 구합니다.
+        for(int i=left; i<=right; i++){
+            int count=0;
+            //1부터 끝수인 i수까지 i수의 나머지 0을 카운팅합니다.
+            for(int j=1; j<=i; j++){
+                if(i%j==0) count++;
+            }
+            //count 홀수, 짝수에 따라 i를 더하고 빼줍니다.
+            answer=(count%2==0) ? answer+i : answer-i;
+        }
+        return answer;
+    }
+}

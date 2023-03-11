@@ -1,0 +1,14 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for(int i=1;i<n;i++){
+            if(n%i==1){
+                answer=i;
+                return answer;
+            }
+        }
+        return answer;
+    }
+}
+//if문에 있는 return answer;부분이 핵심입니다.
+//나머지가 1일때 가장 작은 첫번째수를 찾으니까 1~n까지 지만 나머지가 1인 수가 발견되면 바로 출력하고 종료합니다.

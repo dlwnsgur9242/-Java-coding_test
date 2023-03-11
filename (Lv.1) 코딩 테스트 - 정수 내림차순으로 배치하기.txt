@@ -1,0 +1,27 @@
+class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        String str = String.valueOf(n);
+        int leng =str.length();
+        long[] a = new long[leng];
+        int index=0;
+        while(n>0){
+            a[index++]=n%10;
+            n/=10;
+        }
+        for(int i = 0; i < a.length; i++) {
+            for(int j = 0 ; j < a.length - i - 1 ; j++) {
+                if(a[j] > a[j+1]) {
+                    long temp = a[j+1];
+                    a[j+1] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        for(int i = 0; i < a.length; i++) {
+            answer += a[i]* Math.pow(10, i);
+        }
+        return answer;
+    }
+}
+// 4번째 줄. long 타입의 자릿수를 구하려면 n을 문자열로 변환한 후 문자열의 길이를 구해야 합니다. 

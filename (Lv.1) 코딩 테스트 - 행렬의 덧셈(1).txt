@@ -1,0 +1,16 @@
+// 함수 정의: int형 2차원 배열 arr1과 arr2를 입력받아 같은 위치의 요소를 더한 결과를 반환합니다.
+// 반환값: int형 2차원 배열
+class Solution {
+    public int[][] solution(int[][] arr1, int[][] arr2) {
+        // 반환할 2차원 배열 answer를 선언하고, arr1과 동일한 크기로 초기화합니다.
+        int[][] answer = new int[arr1.length][arr1[0].length];
+        // for문을 사용하여 arr1과 arr2의 같은 위치의 요소를 더한 결과를 answer 배열에 저장합니다.
+        for(int i=0;i<arr1.length;i++){
+            for(int j=0;j<arr1[0].length;j++){
+                answer[i][j]=arr1[i][j] + arr2[i][j];
+            }
+        }
+        // answer 배열을 반환합니다.
+        return answer;
+    }
+}

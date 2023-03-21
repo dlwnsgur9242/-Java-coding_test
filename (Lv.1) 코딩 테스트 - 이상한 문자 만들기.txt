@@ -1,0 +1,17 @@
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] words = s.split(" ", -1); // 공백으로 문자열을 분리하여 배열로 저장
+        for(String word : words) { //  words 배열의 각 요소를 word 변수에 대입하면서 반복문을 실행
+            for(int i = 0; i < word.length(); i++) {
+                if(i % 2 == 0) { // 짝수 인덱스의 알파벳은 대문자로 변환
+                    answer += Character.toUpperCase(word.charAt(i));
+                } else { // 홀수 인덱스의 알파벳은 소문자로 변환
+                    answer += Character.toLowerCase(word.charAt(i));
+                }
+            }
+            answer += " "; // 단어의 변환을 끝낸 후, 공백 추가
+        }
+        return answer.substring(0, answer.length() - 1); // 마지막 공백 제거 후 반환
+    }
+}

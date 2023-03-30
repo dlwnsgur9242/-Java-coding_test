@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Solution {
+    public String[] solution(String[] strings, int n) {
+        String[] answer = new String[strings.length];
+        int[] num = new int[strings.length];
+        for(int i=0;i<strings.length;i++){
+            num[i]=(int)strings[i].charAt(n);
+        }
+        for(int i=0;i<num.length;i++){
+            for(int j=i+1;j<num.length;j++){
+                if(num[i]==num[j]){
+                    if(strings[i].compareTo(strings[j])>0){
+                        String temp = strings[i];
+                        strings[i] = strings[j];
+                        strings[j] = temp;
+                    }
+                }
+                else if(num[i]>num[j]){
+                    int temp = num[i];
+                    num[i] = num[j];
+                    num[j] = temp;
+
+                    String tempStr = strings[i];
+                    strings[i] = strings[j];
+                    strings[j] = tempStr;
+                }
+            }
+        }
+        for(int i=0;i<strings.length;i++){
+            answer[i]=strings[i];
+        }
+        return answer;
+    }
+}

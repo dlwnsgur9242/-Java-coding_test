@@ -1,0 +1,11 @@
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        String[] num = {"zero","one","two","three","four","five","six","seven","eight","nine"};
+        for(int i=0;i<10;i++){
+            s = s.replace(num[i],Integer.toString(i)); //숫자를 문자열로 변환 toString(변수)
+        }   // 특정문자(a)를 원하는 문자(b)로 변환 replace(a,b)
+        answer = Integer.parseInt(s);//문자열을 숫자로 변환 paresInt(변수)
+        return answer;
+    }
+}

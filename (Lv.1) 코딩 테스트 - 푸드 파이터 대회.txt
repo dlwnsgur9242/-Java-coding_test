@@ -1,0 +1,26 @@
+class Solution {
+    public String solution(int[] food) {
+        String answer = "";
+        String answer_str = "";
+
+        // 문자열 answer 문제 요구사항 처리+저장
+        for(int i=0;i<food.length;i++){
+            System.out.print(i);
+            for(int j=0;j<food[i]/2;j++){
+                answer += Integer.toString(i);
+            }
+        }
+        
+        // 문자열 answer 역순 answer_srt에 저장
+        for(int j=answer.length()-1;j>=0;j--){
+            answer_str += answer.charAt(j);
+        }
+        
+        // 문자열 answer 뒤에 문자"0" 추가
+        answer += "0";
+        
+        // 문자열 answer 뒤에 문자열 answer_str 추가
+        answer += answer_str;
+        return answer;
+    }
+}

@@ -1,0 +1,27 @@
+class Solution {
+    public int[] solution(String s) {
+        int[] answer = new int[s.length()];
+        
+        for(int i=0;i<s.length();i++){
+            if(i !=0){
+                //문자열 s를 0~i번째까지 자르고 문자열 s의 i번째 문자가 마지막으로 등장한 index를 찾습니다.  
+                //lastIndexOf메서드 <이전 문자열에서 현재 문자가 등장하지 않은 경우에는 -1이 나옵니다!>
+                //i=2 이면 s.substring(0,2)는 s문자열의 0~1을 의미하며 lastIndexOf(s.charAt(2))는 "a"를 의미합니다. 
+                //s.substring(0,2)에 lastIndexOf(s.charAt(2))마지막 위치가 어디인지 출력합니다.
+                int idx = s.substring(0,i).lastIndexOf(s.charAt(i));
+                
+                if(idx != -1){
+                    answer[i] = i-idx;
+                }
+                else{
+                    answer[i] = idx;
+                }
+            }
+            else{
+                answer[i] = -1;
+            }
+        }
+        
+        return answer;
+    }
+}
